@@ -1,0 +1,13 @@
+.app {
+    margin: 0 auto;
+    position: relative;
+    max-width: 1280px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial, sans-serif;
+    color: rgb(44, 52, 62);
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    min-height: 100vh;
+}

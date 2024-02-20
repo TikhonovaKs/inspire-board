@@ -1,0 +1,33 @@
+.footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background: #fffcfc;
+    box-shadow: 5px -1px 10px rgba(0, 0, 0, 0.07);
+    padding: 2.5rem 0;
+}
+.footer__col {
+    padding: .5rem;
+    display: flex;
+    gap: 20px;
+}
+.footer__btn {
+    padding: .5em 2em;
+    background: #ff6838;
+    border-radius: 50px;
+    color: #fff;
+    text-decoration: none;
+}
+.footer__text {
+    font-size: 14px;
+}
+.footer__credits {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
