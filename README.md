@@ -4,7 +4,7 @@
 
 ## Project links
 * Website [Visit website](https://mood-page-hi.netlify.app/)
-* Github [Visit repository](https://github.com/TikhonovaKs/inspire-board.git)
+* Github [Visit repository](https://github.com/TikhonovaKs/inspire-board/tree/main)
 
 ## Tools and stack: 
 * HTML / CSS / React / TypeScript / API
