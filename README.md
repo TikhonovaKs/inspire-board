@@ -3,8 +3,8 @@
 ***This is a service for creating your own mood board by searching for images using keywords, viewing, adding, and removing them.***>
 
 ## Project links
-* Website [Visit website]()
-* Github [Visit repository]()
+* Website [Visit website](https://mood-page-hi.netlify.app/)
+* Github [Visit repository](https://github.com/TikhonovaKs/inspire-board.git)
 
 ## Tools and stack: 
 * HTML / CSS / React / TypeScript / API
@@ -27,7 +27,7 @@ To set up this project locally, follow the steps below:
 1. **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/TikhonovaKs/mood-board.git
+    git clone https://github.com/TikhonovaKs/inspire-board.git
     ```
 
 2. **Navigate to the Repository:**
