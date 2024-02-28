@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.css": "tailwindcss",
+        "*.scss": "postcss",
+        "*.module.scss": "postcss"
+    }
+}

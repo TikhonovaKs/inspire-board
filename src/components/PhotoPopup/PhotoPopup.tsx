@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
-import { CiBookmarkPlus, CiCircleMinus } from 'react-icons/ci';
+import { CiBookmarkPlus, CiCircleMinus, CiCircleRemove } from 'react-icons/ci';
 import './PhotoPopup.css';
 import useBoard from '../../providers/BoardProvider/BoardProvider.hook';
 import Image from '../../models/Image';
+import styles from './PhotoPopup.module.scss';
 
 interface PhotoPopupProps {
   selectedCard: Image | null;
@@ -13,7 +14,7 @@ const PhotoPopup: FC<PhotoPopupProps> = ({ selectedCard, onClose }) => {
   const { saveCard, deleteCard } = useBoard();
 
   const handleSave = (card: Image | null) => {
-    if(!card) {
+    if (!card) {
       return;
     }
     saveCard(card);
@@ -25,22 +26,26 @@ const PhotoPopup: FC<PhotoPopupProps> = ({ selectedCard, onClose }) => {
     onClose();
   };
 
+  const handleOnClose = (event: React.MouseEvent) => {
+    if ((event.target as HTMLElement).id === 'container') onClose();
+  };
+
   return (
-    <div className="popup popup_overley_dark">
-      <div className="popup__container">
-        <img src={selectedCard?.src.original} alt={selectedCard?.alt} className="popup__image" />
-        <div className="popup__buttonsContainer">
+    <div id="container" onClick={handleOnClose} className={styles.parent}>
+      <div className={styles.container}>
+        <img src={selectedCard?.src.original} alt={selectedCard?.alt} className={styles.img} />
+        <div>
           {selectedCard?.isSaved === true ? (
-            <button className="popup__button" onClick={() => handleDelete(selectedCard)}>
+            <button className={styles.buttonSave} onClick={() => handleDelete(selectedCard)}>
               <CiCircleMinus />
             </button>
           ) : (
-            <button className="popup__button" onClick={() => handleSave(selectedCard)}>
+            <button className={styles.buttonSave} onClick={() => handleSave(selectedCard)}>
               <CiBookmarkPlus />
             </button>
           )}
-          <button className="popup__closeButton" onClick={onClose}></button>
-        </div>
+          </div>
+          <button className={styles.buttonClose} onClick={onClose}><CiCircleRemove /></button>        
       </div>
     </div>
   );

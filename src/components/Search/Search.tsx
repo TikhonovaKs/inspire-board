@@ -1,10 +1,10 @@
-import { FieldValues, useForm }  from 'react-hook-form';
+import { FieldValues, useForm } from 'react-hook-form';
 import useSearch from '../../providers/SearchProvider/SearchProvider.hook';
-import './Search.css';
+import styles from './Search.module.scss';
 
 type FormData = {
-  keyword: string
-}
+  keyword: string;
+};
 
 const Search = () => {
   const { setKeyWord } = useSearch();
@@ -14,7 +14,7 @@ const Search = () => {
     handleSubmit,
     formState: { errors, isValid },
   } = useForm<FormData>({
-    mode: "onChange",
+    mode: 'onChange',
   });
 
   const onSubmit = (data: FieldValues) => {
@@ -22,48 +22,47 @@ const Search = () => {
   };
 
   return (
-    <form
-      className="search"
-      onSubmit={handleSubmit(onSubmit)}
-      name="searchform"
-      noValidate
-    >
+    <form className={styles.form} onSubmit={handleSubmit(onSubmit)} name="searchform" noValidate>
       <input
         type="text"
         placeholder="Press to search..."
-        className="search__input"
-        {...register("keyword", {
+        className={styles.input}
+        {...register('keyword', {
           required: {
             value: true,
-            message: "Please enter a keyword",
+            message: 'Please enter a keyword',
           },
           minLength: {
             value: 1,
-            message: "Minimum length is 1",
+            message: 'Minimum length is 1',
           },
           maxLength: {
             value: 20,
-            message: "Maximum length is 20",
+            message: 'Maximum length is 20',
           },
           pattern: {
             value: /^[a-zA-Z\s-]+$/,
-            message: "Please enter a valid keword",
+            message: 'Please enter a valid keword',
           },
         })}
       ></input>
       <div className="search__error">
-        {errors?.keyword && (
-          <div className="search__error">{errors.keyword.message}</div>
-        )}
+        {errors?.keyword && <div className={styles.error}>{errors.keyword.message}</div>}
       </div>
       <button
         type="submit"
-        className="search__button search__button_disabled"
+        // className="search__button search__button_disabled"
+        className={styles.button}
         aria-label="Send"
         disabled={!isValid}
-      ></button>
+      >
+        <img
+        
+          src="/images/search-button.svg" 
+          alt='search button'/>
+      </button>
     </form>
   );
-}
+};
 
 export default Search;
