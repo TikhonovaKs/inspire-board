@@ -6,9 +6,13 @@ module.exports = {
       inset: {
         '8px': '8px',
         '430px': '430px',
-        '75vh': '75vh',
-        '75vw': '75vw',
       },
+      height: theme => ({
+        "screen/75": "75vh",
+        "screen/3": "calc(100vh / 3)",
+        "screen/4": "calc(100vh / 4)",
+        "screen/5": "calc(100vh / 5)",
+      }),
       transitionTimingFunction: {
         DEFAULT: 'ease-in-out',
       },

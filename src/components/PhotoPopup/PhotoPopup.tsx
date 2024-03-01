@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { CiBookmarkPlus, CiCircleMinus, CiCircleRemove } from 'react-icons/ci';
-import './PhotoPopup.css';
 import useBoard from '../../providers/BoardProvider/BoardProvider.hook';
 import Image from '../../models/Image';
 import styles from './PhotoPopup.module.scss';
