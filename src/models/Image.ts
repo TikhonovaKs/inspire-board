@@ -1,7 +1,7 @@
 type Image = {
   id: number;
   src: {
-    large:string
+    medium:string
   };
   alt: string;
   isSaved: boolean;
