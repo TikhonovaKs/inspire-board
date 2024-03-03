@@ -1,9 +1,9 @@
 import React, { useState, FC } from 'react';
-import './CardList.css';
 import useResize from '../../hooks/useResize';
 import Card from '../Card/Card';
 import PhotoPopup from '../PhotoPopup/PhotoPopup';
 import Image from '../../models/Image';
+import styles from './CardList.module.scss';
 
 interface CardListProps {
   cardsList: Image[],
@@ -55,8 +55,8 @@ const CardList: FC<CardListProps> = ({ cardsList }) => {
 
   return (
     <>
-      <section className="cardList__wrapper">
-        <ul className="cardList">{cards}</ul>
+      <section className={styles.parent}>
+        <ul className={styles.list}>{cards}</ul>
         <button
           className={`cardList__button-more ${isButtonHidden ? 'cardList__button-more-hidden' : ''}`}
           aria-label=""

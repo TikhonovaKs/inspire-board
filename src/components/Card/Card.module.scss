@@ -1,0 +1,13 @@
+.parent {
+  @apply flex flex-col relative h-min w-full
+}
+
+.image {
+  @apply rounded-lg object-cover
+}
+
+.button {
+  @apply px-1 h-10 text-3xl absolute top-3 right-3 bg-white rounded-sm bg-opacity-90
+  hover:bg-zinc-600 hover:text-white
+}
+
