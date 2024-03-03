@@ -1,9 +1,8 @@
-import "./Header.css";
 import { Link } from "react-router-dom";
-import { ReactComponent as LogoIcon } from "../../Icons/logo-dark.svg";
-import { ReactComponent as FindIcon } from "../../Icons/find-rectangle-dark.svg";
-import { ReactComponent as AccountIcon } from "../../Icons/profile-dark.svg";
+import { RiAccountCircleLine, RiSearch2Line } from "react-icons/ri";
+import { ReactComponent as LogoIcon } from "../../Icons/logo.svg";
 import { useState } from "react";
+import styles from './Header.module.scss';
 
 export default function Header() {
   const [iconState, setIconState] = useState(false);
@@ -13,26 +12,30 @@ export default function Header() {
   }
 
   return (
-    <header className="header">
-      <div className="header__container">
-        <div className="header__left">
+    <header>
+        <div>
           <Link to="/search">
-            <LogoIcon className="header__icon header__icon--logo" />
+            <LogoIcon className={styles.logo} />
           </Link>
         </div>
 
         <div className="header__right">
           {iconState ? (
             <Link to="/search" onClick={handleClick}>
-              <FindIcon className="header__icon header__icon--find" />
+              <div className={styles.button}>
+              <RiSearch2Line />
+              <p>Go to search</p>        
+              </div>
             </Link>
           ) : (
             <Link to="/myboard" onClick={handleClick}>
-              <AccountIcon className="header__icon header__icon--account" />
+              <div className={styles.button}>
+              <RiAccountCircleLine />
+              <p>My board</p>        
+              </div>
             </Link>
           )}
         </div>
-      </div>
     </header>
   );
 }

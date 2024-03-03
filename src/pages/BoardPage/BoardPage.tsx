@@ -1,12 +1,13 @@
-import "./BoardPage.css";
-import { ReactComponent as HeartIcon } from "../../Icons/heart-dark.svg";
+import './BoardPage.css';
+import { ReactComponent as HeartIcon } from '../../Icons/heart-dark.svg';
 import React, { FormEvent } from 'react';
 import useBoard from '../../providers/BoardProvider/BoardProvider.hook';
 import './BoardPage.css';
 import CardList from '../../components/CardList/CardList';
+import styles from './BoardPage.module.scss';
 
 export default function BoardPage() {
- const { boardList, likes, handleLikes, boardTitle, onChangeTitle } = useBoard();
+  const { boardList, likes, handleLikes, boardTitle, onChangeTitle } = useBoard();
 
   function onSubmitForm(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -20,7 +21,7 @@ export default function BoardPage() {
             className="boardpage__input"
             type="text"
             onChange={(e) => onChangeTitle(e)}
-            placeholder={boardTitle ? boardTitle : "Board title..."}
+            placeholder={boardTitle ? boardTitle : 'Board title...'}
           />
         </form>
       </div>
@@ -33,9 +34,9 @@ export default function BoardPage() {
             </div>
           </div>
         </div>
-        <div className="boardPage">
-      <CardList cardsList={boardList} />
-    </div>
+        <div className={styles.field}>
+          <CardList cardsList={boardList} />
+        </div>
       </div>
     </section>
   );

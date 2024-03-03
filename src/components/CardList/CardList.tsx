@@ -58,7 +58,7 @@ const CardList: FC<CardListProps> = ({ cardsList }) => {
       <section className={styles.parent}>
         <ul className={styles.list}>{cards}</ul>
         <button
-          className={`cardList__button-more ${isButtonHidden ? 'cardList__button-more-hidden' : ''}`}
+          className={`${styles.more_button} ${isButtonHidden ? styles.more_button_hidden : ''}`}
           aria-label=""
           type="button"
           onClick={showMoreCards}
@@ -68,7 +68,6 @@ const CardList: FC<CardListProps> = ({ cardsList }) => {
       </section>
       {popupVisible && (
         <PhotoPopup
-          // className={popupVisible ? 'popup_is-opened' : ''}
           selectedCard={selectedCard}
           onClose={closePopup}
         />

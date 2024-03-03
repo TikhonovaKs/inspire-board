@@ -1,11 +1,20 @@
 .parent {
-  @apply flex flex-col mt-7
+  @apply flex flex-col mt-7 items-center justify-center
   md:mt-14
 }
 
 .list {
   @apply 
-  columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4 px-2 py-5
+  columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4 px-1 py-3
+}
+
+.more_button {
+  @apply bg-zinc-700 text-white p-2 w-full rounded-full my-4 hover:text-white transition-colors hover:bg-zinc-500
+  md:w-64 md:my-8 md:p-3 md:text-lg
+}
+
+.more_button_hidden {
+  @apply hidden
 }
 
 
