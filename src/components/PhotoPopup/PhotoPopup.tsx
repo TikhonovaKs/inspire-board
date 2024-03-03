@@ -32,7 +32,7 @@ const PhotoPopup: FC<PhotoPopupProps> = ({ selectedCard, onClose }) => {
   return (
     <div id="container" onClick={handleOnClose} className={styles.parent}>
       <div className={styles.container}>
-        <img src={selectedCard?.src.medium} alt={selectedCard?.alt} className={styles.img} />
+        <img src={selectedCard?.src.large} alt={selectedCard?.alt} className={styles.img} />
         <div>
           {selectedCard?.isSaved === true ? (
             <button className={styles.buttonSave} onClick={() => handleDelete(selectedCard)}>
