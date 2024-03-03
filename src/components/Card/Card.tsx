@@ -3,8 +3,8 @@ import React, { FC } from 'react';
 import useBoard from '../../providers/BoardProvider/BoardProvider.hook';
 import useSearch from '../../providers/SearchProvider/SearchProvider.hook';
 import { CiBookmarkPlus, CiCircleMinus } from 'react-icons/ci';
-import './Card.css';
 import Image from '../../models/Image';
+import styles from './Card.module.scss';
 
 interface CardProps {
   card: Image, 
@@ -26,15 +26,15 @@ const Card: FC<CardProps> = ({ card, onClick }) => {
 
   return (
     <>
-    <div className="card__wrapper">
-        <img className="card" src={card.src.original} alt={card.alt} key={card.index} onClick={() => onClick(card)} />
+    <div className={styles.parent}>
+        <img className={styles.image} src={card.src.original} alt={card.alt} key={card.index} onClick={() => onClick(card)} />
         {card.isSaved === true ? (
-          <button className="card__button" onClick={() => handleDelete(card)}>
+          <button className={styles.button} onClick={() => handleDelete(card)}>
             <CiCircleMinus />
           </button>
         ) : (
           <button
-            className= "card__button"
+            className={styles.button}
             onClick={() => handleSave(card)}>
             <CiBookmarkPlus />
           </button>
