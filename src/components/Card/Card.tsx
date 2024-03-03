@@ -27,7 +27,8 @@ const Card: FC<CardProps> = ({ card, onClick }) => {
   return (
     <>
     <div className={styles.parent}>
-        <img className={styles.image} src={card.src.original} alt={card.alt} key={card.index} onClick={() => onClick(card)} />
+        {/* <img className={styles.image} src={card.src.original} alt={card.alt} key={card.index} onClick={() => onClick(card)} /> */}
+        <img className={styles.image} src={card.src.large} alt={card.alt} key={card.index} onClick={() => onClick(card)} />
         {card.isSaved === true ? (
           <button className={styles.button} onClick={() => handleDelete(card)}>
             <CiCircleMinus />
